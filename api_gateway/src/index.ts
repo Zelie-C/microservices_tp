@@ -22,10 +22,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const port = parseInt(process.env.PORT as string);
-const carUrl = process.env.CAR_API_URL!;
+const carUrl = process.env.CAR_SERVICE_URL!;
+const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
 
 app.use('/car', createProxyMiddleware({ target: carUrl, changeOrigin: true }));
+app.use('/pythonservice', createProxyMiddleware({ target: pythonServiceUrl, changeOrigin: true }));
 app.use('/user', userRouter);
 
 app.listen(port)
