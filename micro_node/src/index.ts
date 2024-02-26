@@ -32,7 +32,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const apiRouter = express.Router();
-apiRouter.use('/car', carRouter);
+apiRouter.use('/cars', carRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

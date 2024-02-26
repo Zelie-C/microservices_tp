@@ -14,6 +14,9 @@ const sequelize = new Sequelize({
     storage: 'db/database.sqlite'
 });
 
+sequelize.sync({ force: true });
+// sequelize.sync();
+
 export const User = UserModel(sequelize)
 export const TokenBlacklist = TokenBlacklistModel(sequelize)
 
@@ -26,8 +29,9 @@ const carUrl = process.env.CAR_SERVICE_URL!;
 const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
 
-app.use('/car', createProxyMiddleware({ target: carUrl, changeOrigin: true }));
-app.use('/pythonservice', createProxyMiddleware({ target: pythonServiceUrl, changeOrigin: true }));
-app.use('/user', userRouter);
+app.use('/cars', createProxyMiddleware({ target: carUrl, changeOrigin: true }));
+app.use('/pythonservices', createProxyMiddleware({ target: pythonServiceUrl, changeOrigin: true }));
+app.use('/users', userRouter);
+app.use('/auth', userRouter);
 
 app.listen(port)
