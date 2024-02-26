@@ -1,0 +1,12 @@
+POST http://localhost:4001/cars
+Content-Type: application/json
+
+{
+  "marque": "Toyota",
+  "modele": "Corolla",
+  "year": 2015,
+  "color": "white"
+}
+
+###
+GET http://localhost:4001/cars

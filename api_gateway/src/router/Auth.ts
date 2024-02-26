@@ -14,7 +14,7 @@ authRouter.post('/register', async(req, res) => {
         
         if (uniqueMail === null) {
             const saltRounds = 10;
-            const hash = bcrypt.hash(password, saltRounds);
+            const hash = await bcrypt.hash(password, saltRounds);
             await User.create({ 
                 email: email,
                 password: hash

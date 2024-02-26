@@ -8,6 +8,8 @@ import { Sequelize } from 'sequelize';
 import { UserModel } from './model/User';
 import { TokenBlacklistModel } from './model/TokenBlackList';
 import { userRouter } from './router/User';
+import { authRouter } from './router/Auth';
+import { verifyToken } from './middlewares/verifyToken';
 
 const sequelize = new Sequelize({
     dialect: 'sqlite',
@@ -28,10 +30,25 @@ const port = parseInt(process.env.PORT as string);
 const carUrl = process.env.CAR_SERVICE_URL!;
 const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
+const carOptions = {
+    target: carUrl,
+    changeOrigin: true,
+}
 
-app.use('/cars', createProxyMiddleware({ target: carUrl, changeOrigin: true }));
-app.use('/pythonservices', createProxyMiddleware({ target: pythonServiceUrl, changeOrigin: true }));
+const pythonOptions = {
+    target: pythonServiceUrl,
+    changeOrigin: true,
+    pathRewrite: {
+        '^/pythonservices': '/'
+    },
+}
+
+const carProxy = createProxyMiddleware(carOptions)
+const pythonProxy = createProxyMiddleware(pythonOptions)
+
+app.use('/cars', verifyToken, carProxy)
+app.use('/pythonservices', verifyToken, pythonProxy)
 app.use('/users', userRouter);
-app.use('/auth', userRouter);
+app.use('/auth', authRouter);
 
 app.listen(port)
