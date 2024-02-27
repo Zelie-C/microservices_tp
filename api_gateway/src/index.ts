@@ -50,8 +50,10 @@ const pythonProxy = createProxyMiddleware(pythonOptions)
 
 app.use('/cars', verifyToken, carProxy)
 app.use('/pythonservices', verifyToken, pythonProxy)
+
+app.use(express.json());
+
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
 
-app.use(express.json());
 app.listen(port)
