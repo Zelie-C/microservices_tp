@@ -38,6 +38,12 @@ GET http://localhost:4002
 ###
 GET http://localhost:4001
 
+###
+GET http://localhost:4002
+
+###
+GET http://localhost:4001
+
 ### 
 GET http://localhost:4000/cars
 Authorization: Bearer {{token}}
