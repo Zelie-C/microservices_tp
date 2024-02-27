@@ -32,9 +32,6 @@ const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
 const carOptions = {
     target: carUrl,
-    headers: {
-        "Connection": "keep-alive"
-    },
     changeOrigin: true,
     secure: false,
     pathRewrite: {

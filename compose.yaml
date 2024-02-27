@@ -16,10 +16,17 @@ services:
     ports:
       - "4001:4001"
     env_file:
+<<<<<<< HEAD
       - ./cars_service/.env
   counter:
     build:
       context: ./counter_service
+=======
+      - ./micro_node/.env
+  counter:
+    build:
+      context: ./micro_python
+>>>>>>> a03f208 (docker-compose non fonctionnel)
       dockerfile: Dockerfile
     ports:
       - "4002:5000"
