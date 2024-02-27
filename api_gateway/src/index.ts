@@ -45,11 +45,14 @@ const carOptions = {
 =======
 >>>>>>> 7c85d62 (docker-compose non fonctionnel)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     headers: {
         "Connection": "keep-alive"
     },
 >>>>>>> 79b1e13 (test fonctionnement avec docker)
+=======
+>>>>>>> d413158 (docker-compose non fonctionnel)
     changeOrigin: true,
     secure: false,
     pathRewrite: {
