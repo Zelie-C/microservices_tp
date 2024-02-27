@@ -11,7 +11,7 @@ services:
   cars:
     image: cars
     build:
-      context: ./cars_service
+      context: ./micro_node
       dockerfile: Dockerfile
     ports:
       - "4001:4001"
@@ -19,9 +19,9 @@ services:
       - ./micro_node/.env
   counter:
     build:
-      context: ./counter_service
+      context: ./micro_python
       dockerfile: Dockerfile
     ports:
       - "4002:5000"
 
-      
+        
