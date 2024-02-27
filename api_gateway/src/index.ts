@@ -30,7 +30,10 @@ const carUrl = process.env.CAR_SERVICE_URL!;
 const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
 const carOptions = {
-    target: 'http://localhost:4001',
+    target: carUrl,
+    headers: {
+        "Connection": "keep-alive"
+    },
     changeOrigin: true,
     pathRewrite: {
         '^\/cars': '/'
@@ -38,7 +41,7 @@ const carOptions = {
 }
 
 const pythonOptions = {
-    target: 'http://localhost:4002',
+    target: pythonServiceUrl,
     changeOrigin: true,
     pathRewrite: {
         '^/pythonservices': '/'
