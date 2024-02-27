@@ -1,15 +1,20 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyIiwiaWF0IjoxNzA5MDIzMzM5fQ.SJqYJG1L4RSw8tMjkLONBCgNc-7QLARd9bcivGmEwXQ
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyIiwiaWF0IjoxNzA5MDQwMDc0fQ.LGtWuhEghlfZr2VmK5d2OgBqCHTVRCyU3YXn_5Nckmg
+###
+GET http://localhost:4000/pythonservices
+Authorization: Bearer {{token}}
 
 ###
-GET http://localhost:4000/pythonservices/
-Authorization: Bearer {{token}}
+GET http://localhost:4002
+
+###
+GET http://localhost:4001
 
 ### 
-GET http://localhost:4000/cars/
+GET http://localhost:4000/cars
 Authorization: Bearer {{token}}
 
 ###
-POST http://localhost:4000/cars/
+POST http://localhost:4000/cars
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
