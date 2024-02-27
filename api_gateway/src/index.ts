@@ -41,6 +41,7 @@ const carOptions = {
 
 const pythonOptions = {
     target: pythonServiceUrl,
+    target: pythonServiceUrl,
     changeOrigin: true,
     secure: false,
     pathRewrite: {
