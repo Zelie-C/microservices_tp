@@ -2,6 +2,7 @@
 ###
 GET http://localhost:4000/pythonservices
 Authorization: Bearer {{token}}
+<<<<<<< HEAD
 
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyIiwiaWF0IjoxNzA5MDQwMDc0fQ.LGtWuhEghlfZr2VmK5d2OgBqCHTVRCyU3YXn_5Nckmg
 ###
@@ -16,6 +17,10 @@ GET http://localhost:4001
 >>>>>>> 7c85d62 (docker-compose non fonctionnel)
 
 ###
+=======
+
+###
+>>>>>>> 7c85d62 (docker-compose non fonctionnel)
 GET http://localhost:4002
 
 ###
