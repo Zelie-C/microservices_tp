@@ -32,27 +32,9 @@ const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
 const carOptions = {
     target: carUrl,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     headers: {
         "Connection": "keep-alive"
     },
->>>>>>> 79b1e13 (test fonctionnement avec docker)
-=======
->>>>>>> d413158 (docker-compose non fonctionnel)
-=======
->>>>>>> 7c85d62 (docker-compose non fonctionnel)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    headers: {
-        "Connection": "keep-alive"
-    },
->>>>>>> 79b1e13 (test fonctionnement avec docker)
-=======
->>>>>>> d413158 (docker-compose non fonctionnel)
     changeOrigin: true,
     secure: false,
     pathRewrite: {
