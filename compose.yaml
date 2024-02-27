@@ -16,10 +16,10 @@ services:
     ports:
       - "4001:4001"
     env_file:
-      - ./micro_node/.env
+      - ./cars_service/.env
   counter:
     build:
-      context: ./micro_python
+      context: ./counter_service
       dockerfile: Dockerfile
     ports:
       - "4002:5000"
