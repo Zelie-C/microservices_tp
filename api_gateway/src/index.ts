@@ -9,6 +9,7 @@ import { TokenBlacklistModel } from './model/TokenBlackList';
 import { userRouter } from './router/User';
 import { authRouter } from './router/Auth';
 import { verifyToken } from './middlewares/verifyToken';
+import debug from 'debug';
 
 const sequelize = new Sequelize({
     dialect: 'sqlite',
@@ -31,10 +32,8 @@ const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 
 const carOptions = {
     target: carUrl,
-    headers: {
-        "Connection": "keep-alive"
-    },
     changeOrigin: true,
+    secure: false,
     pathRewrite: {
         '^\/cars': '/'
     },
@@ -43,6 +42,7 @@ const carOptions = {
 const pythonOptions = {
     target: pythonServiceUrl,
     changeOrigin: true,
+    secure: false,
     pathRewrite: {
         '^/pythonservices': '/'
     },
