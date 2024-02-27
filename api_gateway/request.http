@@ -1,12 +1,17 @@
-### 
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyIiwiaWF0IjoxNzA5MDIzMzM5fQ.SJqYJG1L4RSw8tMjkLONBCgNc-7QLARd9bcivGmEwXQ
+
+###
 GET http://localhost:4000/pythonservices/
+Authorization: Bearer {{token}}
 
 ### 
 GET http://localhost:4000/cars/
+Authorization: Bearer {{token}}
 
 ###
 POST http://localhost:4000/cars/
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "marque": "Toyota",
@@ -36,4 +41,4 @@ Content-Type: application/json
 ###
 POST http://localhost:4000/auth/logout
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyIiwiaWF0IjoxNzA4OTYxODk0fQ.-p-KpN8zYCNhwjdskelbh00qxU77t-h3_arDxS13uSo
+Authorization: Bearer {{token}}

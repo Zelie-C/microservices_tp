@@ -15,8 +15,8 @@ const sequelize = new Sequelize({
     storage: 'db/database.sqlite'
 });
 
-sequelize.sync({ force: true });
-// sequelize.sync();
+// sequelize.sync({ force: true });
+sequelize.sync();
 
 export const User = UserModel(sequelize)
 export const TokenBlacklist = TokenBlacklistModel(sequelize)
@@ -32,6 +32,9 @@ const pythonServiceUrl = process.env.PYTHON_SERVICE_URL!;
 const carOptions = {
     target: carUrl,
     changeOrigin: true,
+    pathRewrite: {
+        '^\/cars': '/'
+    },
 }
 
 const pythonOptions = {
