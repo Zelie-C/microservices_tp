@@ -23,7 +23,7 @@ export const TokenBlacklist = TokenBlacklistModel(sequelize)
 
 let app = express();
 app.use(cors());
-app.use(express.json());
+
 
 const port = parseInt(process.env.PORT as string);
 const carUrl = process.env.CAR_SERVICE_URL!;
@@ -53,4 +53,5 @@ app.use('/pythonservices', verifyToken, pythonProxy)
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
 
+app.use(express.json());
 app.listen(port)
