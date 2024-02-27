@@ -1,6 +1,5 @@
 import express from 'express'
 import cors from 'cors'
-import bodyParser from 'body-parser'
 import 'dotenv/config'
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { Sequelize } from 'sequelize';
@@ -24,7 +23,7 @@ export const TokenBlacklist = TokenBlacklistModel(sequelize)
 
 let app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 const port = parseInt(process.env.PORT as string);
 const carUrl = process.env.CAR_SERVICE_URL!;
